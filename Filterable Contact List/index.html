@@ -1,0 +1,65 @@
+<!DOCTYPE hmtl>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Contact</title>
+</head>
+<body>
+	<h2>My Contacts</h1>
+		<label>Search: <input type="text" id="search" placeholder="SEarch...."></label>
+		<br>
+		<ul id = "names">
+			<li class = "headings"><h4>A</h5></li>
+			<li class="it">Abe</li>
+			<li class="it">Aayjeet</li>
+			<li class="it">Ankan</li>
+			<li class = "headings"><h4>B</h5></li>
+			<li class="it">Bbe</li>
+			<li class="it">Bayjeet</li>
+			<li class="it">Bnkan</li>
+			<li class = "headings"><h4>C</h5></li>
+			<li class="it">Cbe</li>
+			<li class="it">Cayjeet</li>
+			<li class="it">Cnkan</li>
+		</ul>
+
+		<script type="text/javascript">
+
+			var filterInput = document.getElementById("search");
+			filterInput.addEventListener("keyup",filterNames);
+			function filterNames(){
+
+				var filterValue = document.getElementById("search").value.toUpperCase();
+				
+				var names = document.getElementById("names");
+				var li = names.querySelectorAll("li.it");
+				for(var i = 0;i<li.length;i++)
+				{
+					if(li[i].innerHTML.toUpperCase().indexOf(filterValue)>-1 )
+					{
+						li[i].style.display = "";
+					}
+					else{
+
+						li[i].style.display = "none";
+					}
+				}
+
+
+			}
+			
+
+
+
+
+
+		</script>
+
+
+
+
+
+
+
+	</body>
+	</html>
